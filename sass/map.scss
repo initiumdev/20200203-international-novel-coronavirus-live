@@ -113,7 +113,7 @@
   }
 
   .info-card {
-    font-family: "Noto Serif CJK TC", "Noto Serif", "PT Serif", "source-han-serif-sc", Songti SC, serif;
+    font-family: 'Noto Serif TC', serif;
     position: absolute;
     color: #FFF;
     padding: 10px;
@@ -125,8 +125,7 @@
       margin: 0;
 
       &.title {
-        font-size: 18px;
-        font-size: 1.8rem;
+        font-size: 24px;
         font-weight: 900;
       }
 
