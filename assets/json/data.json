@@ -1,16 +1,16 @@
 {
-  "updateTime": "2020年2月2日21時57分",
+  "updateTime": "2020年2月3日21時13分",
   "chinaCount": {
-    "confirmed": 9783,
-    "death": 211
+    "confirmed": 17299,
+    "death": 361
   },
   "worldCount": {
-    "confirmed": 9917,
-    "death": 211
+    "confirmed": 17485,
+    "death": 362
   },
   "outsideChinaCount": {
-    "confirmed": 134,
-    "death": 0
+    "confirmed": 186,
+    "death": 1
   },
   "china": [
     {
@@ -18,25 +18,25 @@
       "type": "china",
       "name": "Hubei",
       "name_zh": "湖北省",
-      "confirmed": "5806",
-      "death": "204",
+      "confirmed": "11177",
+      "death": "350",
       "note": "發源地"
-    },
-    {
-      "id": "1159311795",
-      "type": "china",
-      "name": "Zhejiang",
-      "name_zh": "浙江省",
-      "confirmed": "538",
-      "death": "0",
-      "note": ""
     },
     {
       "id": "1159310335",
       "type": "china",
       "name": "Guangdong",
       "name_zh": "廣東省",
-      "confirmed": "436",
+      "confirmed": "725",
+      "death": "0",
+      "note": ""
+    },
+    {
+      "id": "1159311795",
+      "type": "china",
+      "name": "Zhejiang",
+      "name_zh": "浙江省",
+      "confirmed": "724",
       "death": "0",
       "note": ""
     },
@@ -45,7 +45,7 @@
       "type": "china",
       "name": "Henan",
       "name_zh": "河南省",
-      "confirmed": "352",
+      "confirmed": "566",
       "death": "2",
       "note": ""
     },
@@ -54,16 +54,7 @@
       "type": "china",
       "name": "Hunan",
       "name_zh": "湖南省",
-      "confirmed": "332",
-      "death": "0",
-      "note": ""
-    },
-    {
-      "id": "1159312753",
-      "type": "china",
-      "name": "Jiangxi",
-      "name_zh": "江西省",
-      "confirmed": "240",
+      "confirmed": "521",
       "death": "0",
       "note": ""
     },
@@ -72,7 +63,16 @@
       "type": "china",
       "name": "Anhui",
       "name_zh": "安徽省",
-      "confirmed": "237",
+      "confirmed": "408",
+      "death": "0",
+      "note": ""
+    },
+    {
+      "id": "1159312753",
+      "type": "china",
+      "name": "Jiangxi",
+      "name_zh": "江西省",
+      "confirmed": "391",
       "death": "0",
       "note": ""
     },
@@ -81,7 +81,16 @@
       "type": "china",
       "name": "Chongqing",
       "name_zh": "重慶市",
-      "confirmed": "211",
+      "confirmed": "312",
+      "death": "2",
+      "note": ""
+    },
+    {
+      "id": "1159311859",
+      "type": "china",
+      "name": "Jiangsu",
+      "name_zh": "江蘇省",
+      "confirmed": "271",
       "death": "0",
       "note": ""
     },
@@ -90,7 +99,7 @@
       "type": "china",
       "name": "Shandong",
       "name_zh": "山東省",
-      "confirmed": "184",
+      "confirmed": "259",
       "death": "0",
       "note": ""
     },
@@ -99,17 +108,8 @@
       "type": "china",
       "name": "Sichuan",
       "name_zh": "四川省",
-      "confirmed": "177",
-      "death": "0",
-      "note": ""
-    },
-    {
-      "id": "1159311859",
-      "type": "china",
-      "name": "Jiangsu",
-      "name_zh": "江蘇省",
-      "confirmed": "168",
-      "death": "0",
+      "confirmed": "254",
+      "death": "1",
       "note": ""
     },
     {
@@ -117,7 +117,7 @@
       "type": "china",
       "name": "Beijing",
       "name_zh": "北京市",
-      "confirmed": "139",
+      "confirmed": "212",
       "death": "1",
       "note": ""
     },
@@ -126,7 +126,7 @@
       "type": "china",
       "name": "Shanghai",
       "name_zh": "上海市",
-      "confirmed": "135",
+      "confirmed": "203",
       "death": "1",
       "note": ""
     },
@@ -135,16 +135,7 @@
       "type": "china",
       "name": "Fujian",
       "name_zh": "福建省",
-      "confirmed": "120",
-      "death": "0",
-      "note": ""
-    },
-    {
-      "id": "1159310341",
-      "type": "china",
-      "name": "Guangxi",
-      "name_zh": "廣西壯族自治區",
-      "confirmed": "87",
+      "confirmed": "179",
       "death": "0",
       "note": ""
     },
@@ -153,8 +144,26 @@
       "type": "china",
       "name": "Shaanxi",
       "name_zh": "陝西省",
-      "confirmed": "87",
+      "confirmed": "128",
       "death": "0",
+      "note": ""
+    },
+    {
+      "id": "1159310341",
+      "type": "china",
+      "name": "Guangxi",
+      "name_zh": "廣西壯族自治區",
+      "confirmed": "127",
+      "death": "0",
+      "note": ""
+    },
+    {
+      "id": "1159312759",
+      "type": "china",
+      "name": "Heilongjiang",
+      "name_zh": "黑龍江省",
+      "confirmed": "118",
+      "death": "2",
       "note": ""
     },
     {
@@ -162,7 +171,7 @@
       "type": "china",
       "name": "Yunnan",
       "name_zh": "雲南省",
-      "confirmed": "83",
+      "confirmed": "114",
       "death": "0",
       "note": ""
     },
@@ -171,26 +180,8 @@
       "type": "china",
       "name": "Hebei",
       "name_zh": "河北省",
-      "confirmed": "82",
+      "confirmed": "113",
       "death": "1",
-      "note": ""
-    },
-    {
-      "id": "1159312759",
-      "type": "china",
-      "name": "Heilongjiang",
-      "name_zh": "黑龍江省",
-      "confirmed": "59",
-      "death": "2",
-      "note": ""
-    },
-    {
-      "id": "1159311749",
-      "type": "china",
-      "name": "Hainan",
-      "name_zh": "海南省",
-      "confirmed": "52",
-      "death": "0",
       "note": ""
     },
     {
@@ -198,8 +189,17 @@
       "type": "china",
       "name": "Liaoning",
       "name_zh": "遼寧省",
-      "confirmed": "48",
+      "confirmed": "73",
       "death": "0",
+      "note": ""
+    },
+    {
+      "id": "1159311749",
+      "type": "china",
+      "name": "Hainan",
+      "name_zh": "海南省",
+      "confirmed": "71",
+      "death": "1",
       "note": ""
     },
     {
@@ -207,7 +207,7 @@
       "type": "china",
       "name": "Shanxi",
       "name_zh": "山西省",
-      "confirmed": "39",
+      "confirmed": "66",
       "death": "0",
       "note": ""
     },
@@ -216,7 +216,7 @@
       "type": "china",
       "name": "Tianjin",
       "name_zh": "天津市",
-      "confirmed": "32",
+      "confirmed": "56",
       "death": "0",
       "note": ""
     },
@@ -225,7 +225,7 @@
       "type": "china",
       "name": "Gansu",
       "name_zh": "甘肅省",
-      "confirmed": "29",
+      "confirmed": "51",
       "death": "0",
       "note": ""
     },
@@ -234,16 +234,7 @@
       "type": "china",
       "name": "Guizhou",
       "name_zh": "貴州省",
-      "confirmed": "29",
-      "death": "0",
-      "note": ""
-    },
-    {
-      "id": "1159312659",
-      "type": "china",
-      "name": "Ningxia",
-      "name_zh": "寧夏回族自治區",
-      "confirmed": "21",
+      "confirmed": "46",
       "death": "0",
       "note": ""
     },
@@ -252,16 +243,7 @@
       "type": "china",
       "name": "Inner Mongol",
       "name_zh": "內蒙古自治區",
-      "confirmed": "20",
-      "death": "0",
-      "note": ""
-    },
-    {
-      "id": "1159312657",
-      "type": "china",
-      "name": "Xinjiang",
-      "name_zh": "新疆維吾爾自治區",
-      "confirmed": "17",
+      "confirmed": "34",
       "death": "0",
       "note": ""
     },
@@ -270,7 +252,25 @@
       "type": "china",
       "name": "Jilin",
       "name_zh": "吉林省",
-      "confirmed": "14",
+      "confirmed": "31",
+      "death": "0",
+      "note": ""
+    },
+    {
+      "id": "1159312659",
+      "type": "china",
+      "name": "Ningxia",
+      "name_zh": "寧夏回族自治區",
+      "confirmed": "31",
+      "death": "0",
+      "note": ""
+    },
+    {
+      "id": "1159312657",
+      "type": "china",
+      "name": "Xinjiang",
+      "name_zh": "新疆維吾爾自治區",
+      "confirmed": "24",
       "death": "0",
       "note": ""
     },
@@ -279,7 +279,7 @@
       "type": "china",
       "name": "Qinghai",
       "name_zh": "青海省",
-      "confirmed": "8",
+      "confirmed": "13",
       "death": "0",
       "note": ""
     },
@@ -299,7 +299,7 @@
       "type": "world",
       "name": "Japan",
       "name_zh": "日本",
-      "confirmed": "15",
+      "confirmed": "20",
       "death": "0",
       "note": ""
     },
@@ -308,7 +308,7 @@
       "type": "world",
       "name": "Thailand",
       "name_zh": "泰國",
-      "confirmed": "14",
+      "confirmed": "19",
       "death": "0",
       "note": ""
     },
@@ -317,16 +317,7 @@
       "type": "world",
       "name": "Singapore",
       "name_zh": "新加坡",
-      "confirmed": "13",
-      "death": "0",
-      "note": ""
-    },
-    {
-      "id": "1159320473",
-      "type": "world",
-      "name": "Hong Kong",
-      "name_zh": "香港",
-      "confirmed": "12",
+      "confirmed": "18",
       "death": "0",
       "note": ""
     },
@@ -335,7 +326,43 @@
       "type": "world",
       "name": "South Korea",
       "name_zh": "大韓民國",
+      "confirmed": "15",
+      "death": "0",
+      "note": ""
+    },
+    {
+      "id": "1159320473",
+      "type": "world",
+      "name": "Hong Kong",
+      "name_zh": "香港",
+      "confirmed": "15",
+      "death": "0",
+      "note": ""
+    },
+    {
+      "id": "1159320355",
+      "type": "world",
+      "name": "Australia",
+      "name_zh": "澳大利亞",
+      "confirmed": "12",
+      "death": "0",
+      "note": ""
+    },
+    {
+      "id": "1159321369",
+      "type": "world",
+      "name": "United States of America",
+      "name_zh": "美國",
       "confirmed": "11",
+      "death": "0",
+      "note": ""
+    },
+    {
+      "id": "1159320539",
+      "type": "world",
+      "name": "Germany",
+      "name_zh": "德國",
+      "confirmed": "10",
       "death": "0",
       "note": ""
     },
@@ -349,15 +376,6 @@
       "note": ""
     },
     {
-      "id": "1159320355",
-      "type": "world",
-      "name": "Australia",
-      "name_zh": "澳大利亞",
-      "confirmed": "9",
-      "death": "0",
-      "note": ""
-    },
-    {
       "id": "1159321083",
       "type": "world",
       "name": "Malaysia",
@@ -367,20 +385,20 @@
       "note": ""
     },
     {
-      "id": "1159320475",
+      "id": "1159321417",
       "type": "world",
-      "name": "Macao",
-      "name_zh": "澳門",
-      "confirmed": "7",
+      "name": "Vietnam",
+      "name_zh": "越南",
+      "confirmed": "8",
       "death": "0",
       "note": ""
     },
     {
-      "id": "1159321369",
+      "id": "1159320475",
       "type": "world",
-      "name": "United States of America",
-      "name_zh": "美國",
-      "confirmed": "6",
+      "name": "Macao",
+      "name_zh": "澳門",
+      "confirmed": "8",
       "death": "0",
       "note": ""
     },
@@ -389,16 +407,7 @@
       "type": "world",
       "name": "France",
       "name_zh": "法國",
-      "confirmed": "5",
-      "death": "0",
-      "note": ""
-    },
-    {
-      "id": "1159320539",
-      "type": "world",
-      "name": "Germany",
-      "name_zh": "德國",
-      "confirmed": "5",
+      "confirmed": "6",
       "death": "0",
       "note": ""
     },
@@ -407,7 +416,7 @@
       "type": "world",
       "name": "United Arab Emirates",
       "name_zh": "阿拉伯聯合酋長國",
-      "confirmed": "4",
+      "confirmed": "5",
       "death": "0",
       "note": ""
     },
@@ -416,16 +425,16 @@
       "type": "world",
       "name": "Canada",
       "name_zh": "加拿大",
-      "confirmed": "3",
+      "confirmed": "4",
       "death": "0",
       "note": ""
     },
     {
-      "id": "1159321417",
+      "id": "1159320847",
       "type": "world",
-      "name": "Vietnam",
-      "name_zh": "越南",
-      "confirmed": "2",
+      "name": "India",
+      "name_zh": "印度",
+      "confirmed": "3",
       "death": "0",
       "note": ""
     },
@@ -439,29 +448,29 @@
       "note": ""
     },
     {
-      "id": "1159320919",
+      "id": "1159321201",
       "type": "world",
-      "name": "Italy",
-      "name_zh": "義大利",
+      "name": "Russia",
+      "name_zh": "俄羅斯",
       "confirmed": "2",
       "death": "0",
       "note": ""
     },
     {
-      "id": "1159320847",
+      "id": "1159321169",
       "type": "world",
-      "name": "India",
-      "name_zh": "印度",
-      "confirmed": "1",
-      "death": "0",
-      "note": "Note test"
+      "name": "Philippines",
+      "name_zh": "菲律賓",
+      "confirmed": "2",
+      "death": "1",
+      "note": ""
     },
     {
-      "id": "1159320623",
+      "id": "1159320919",
       "type": "world",
-      "name": "Finland",
-      "name_zh": "芬蘭",
-      "confirmed": "1",
+      "name": "Italy",
+      "name_zh": "意大利",
+      "confirmed": "2",
       "death": "0",
       "note": ""
     },
@@ -470,6 +479,24 @@
       "type": "world",
       "name": "Cambodia",
       "name_zh": "柬埔寨",
+      "confirmed": "1",
+      "death": "0",
+      "note": ""
+    },
+    {
+      "id": "1159321025",
+      "type": "world",
+      "name": "Sri Lanka",
+      "name_zh": "斯里蘭卡",
+      "confirmed": "1",
+      "death": "0",
+      "note": ""
+    },
+    {
+      "id": "1159321287",
+      "type": "world",
+      "name": "Sweden",
+      "name_zh": "瑞典",
       "confirmed": "1",
       "death": "0",
       "note": ""
@@ -484,19 +511,19 @@
       "note": ""
     },
     {
-      "id": "1159321169",
+      "id": "1159320587",
       "type": "world",
-      "name": "Philippines",
-      "name_zh": "菲律賓",
+      "name": "Spain",
+      "name_zh": "西班牙",
       "confirmed": "1",
       "death": "0",
       "note": ""
     },
     {
-      "id": "1159321025",
+      "id": "1159320623",
       "type": "world",
-      "name": "Sri Lanka",
-      "name_zh": "斯里蘭卡",
+      "name": "Finland",
+      "name_zh": "芬蘭",
       "confirmed": "1",
       "death": "0",
       "note": ""
