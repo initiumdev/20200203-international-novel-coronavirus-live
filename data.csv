@@ -11,7 +11,7 @@ id,type,name,name_zh,confirmed,death,note
 1159310335,china,Guangdong,廣東省,813,0,
 1159311749,china,Hainan,海南省,80,1,
 1159315795,china,Fujian,福建省,194,0,
-1159311795,china,Zhejiang,浙江省,829,0,
+1159311795,china,Zhejiang,浙江省,895,0,
 1159311855,china,Shanghai,上海市,219,1,
 1159311859,china,Jiangsu,江蘇省,308,0,
 1159312031,china,Shandong,山東省,275,0,
@@ -28,7 +28,7 @@ id,type,name,name_zh,confirmed,death,note
 1159312739,china,Shanxi,山西省,74,0,
 1159312753,china,Jiangxi,江西省,476,0,
 1159312749,china,Henan,河南省,675,2,
-1159312741,china,Hubei,湖北省,13522,414,發源地
+1159312741,china,Hubei,湖北省,16678,479,發源地
 1159310971,china,Anhui,安徽省,480,0,
 1159320845,world,Indonesia,印度尼西亞,0,0,
 1159321083,world,Malaysia,馬來西亞,10,0,
