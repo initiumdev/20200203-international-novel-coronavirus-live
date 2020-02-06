@@ -2745,7 +2745,7 @@ nav#nav {
       height: 100%;
       font-size: 0%;
       text-indent: -7777px;
-      background-image: url(../img/logo.svg);
+      background-image: url(images/logo.svg);
       background-size: contain;
       background-repeat: no-repeat;
       background-position: center center; }
@@ -2844,9 +2844,9 @@ main.main.index .share a {
     position: relative;
     z-index: 1; }
   main.main.index .share a.facebook span {
-    background-image: url(../img/icon-facebook.svg); }
+    background-image: url(images/icon-facebook.svg); }
   main.main.index .share a.twitter span {
-    background-image: url(../img/icon-twitter.svg); }
+    background-image: url(images/icon-twitter.svg); }
   main.main.index .share a::before {
     content: '';
     display: block;
