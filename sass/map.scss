@@ -10,18 +10,18 @@
     pointer-events: all;
   }
 
-  #countries, #states {
+  #countries, #states, #zh-hkg-mac, #sgp {
     fill: #777;
     stroke: #686868;
     stroke-linejoin: round;
     stroke-linecap: round;
   }
 
-  #countries {
+  #countries, #sgp {
     stroke-width: .5;
   }
 
-  #states {
+  #states, #zh-hkg-mac {
     stroke-width: .1;
   }
 
@@ -80,6 +80,7 @@
         height: 12px;
         position: absolute;
         right: -20px;
+        margin-top: 4px;
       }
 
       &:nth-child(1)::after {
@@ -113,7 +114,7 @@
   }
 
   .info-card {
-    font-family: 'Noto Serif TC', serif;
+    font-family: "Noto Serif CJK TC", "Noto Serif", "PT Serif", "source-han-serif-sc", Songti SC, serif;
     position: absolute;
     color: #FFF;
     padding: 10px;
@@ -125,7 +126,8 @@
       margin: 0;
 
       &.title {
-        font-size: 24px;
+        font-size: 18px;
+        font-size: 1.8rem;
         font-weight: 900;
       }
 
