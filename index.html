@@ -62,11 +62,11 @@
               </div>
               <div class="accumulation serif">
                 <div class="confirmed">
-                  <h6>累計確診<br><b>{{dataCSV | sumData('confirmed')}}</b></h6>
+                  <h6>累計確診<br><b>{{dataCSV | sumData('confirmed') + dpConfirmed}}</b></h6>
                   <p>較昨日新增<b>{{newConfirmed}}</b></p>
                 </div>
                 <div class="death">
-                  <h6>累計死亡<br><b>{{dataCSV | sumData('death')}}</b></h6>
+                  <h6>累計死亡<br><b>{{dataCSV | sumData('death') + dpDeath}}</b></h6>
                   <p>較昨日新增<b>{{newDeath}}</b></p>
                 </div>
               </div>
@@ -104,10 +104,15 @@
               <div class="col-md-6" v-for="(datas, key) in groupByType" :key="key">
                 <div class="title serif">
                   <h3>{{ key | groupName }}</h3>
-                  <div class="info"> <span class="confirmed">累計確診 {{datas | sumData('confirmed')}} 例 </span>/ <span class="death">死亡 {{datas | sumData('death')}} 例</span></div>
+                  <div class="info" v-if="key === 'world'"><span class="confirmed">累計確診 {{datas | sumData('confirmed') + dpConfirmed}} 例 </span>/ <span class="death">死亡 {{datas | sumData('death') + dpDeath}} 例</span></div>
+                  <div class="info" v-else><span class="confirmed">累計確診 {{datas | sumData('confirmed')}} 例 </span>/ <span class="death">死亡 {{datas | sumData('death')}} 例</span></div>
                 </div>
                 <div class="content">
-                  <div class="row">
+                  <div class="row" v-if="key === 'world'">
+                    <div class="col-lg-6 col-md-12" v-for="(data, key) in datas" :key="key"><span class="local">{{data.name_zh}}</span><span class="confirmed">{{data.confirmed}}</span><span class="death">{{data.death}}</span></div>
+                    <div class="col-lg-6 col-md-12"><span class="local">鑽石公主號</span><span class="confirmed">{{dpConfirmed}}</span><span class="death">{{dpDeath}}</span></div>
+                  </div>
+                  <div class="row" v-else>
                     <div class="col-lg-6 col-md-12" v-for="(data, key) in datas" :key="key"><span class="local">{{data.name_zh}}</span><span class="confirmed">{{data.confirmed}}</span><span class="death">{{data.death}}</span></div>
                   </div>
                 </div>
