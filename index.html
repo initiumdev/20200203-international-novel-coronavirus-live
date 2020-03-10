@@ -4,21 +4,21 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <meta name="description" content="新型冠狀病毒（2019-nCoV）感染肺炎疫情自2019年底爆發至今擴及全球，確診病例急速增加，端傳媒以互動地圖及來自現場、側面解讀等不同面向的深度報導，帶你掌握疫情的瞬息變化。">
+    <meta name="description" content="自2019年底至今，新冠肺炎全球累計確診病例數已超過10萬，端傳媒將持續以互動地圖及深度報導，帶你掌握疫情進展。">
     <meta property="fb:app_id" content="">
     <meta property="og:title" content="新冠肺炎全球確診病例分布｜端傳媒">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://theinitium.com/project/20200203-international-novel-coronavirus-live">
-    <meta property="og:image" content="https://theinitium.com/project/20200203-international-novel-coronavirus-live/img/social.png">
+    <meta property="og:image" content="https://theinitium.com/project/20200203-international-novel-coronavirus-live/img/social4.png">
     <meta property="og:image:alt" content="新冠肺炎全球確診病例分布｜端傳媒">
     <meta property="og:site_name" content="新冠肺炎全球確診病例分布｜端傳媒">
-    <meta property="og:description" content="新型冠狀病毒（2019-nCoV）感染肺炎疫情自2019年底爆發至今擴及全球，確診病例急速增加，端傳媒以互動地圖及來自現場、側面解讀等不同面向的深度報導，帶你掌握疫情的瞬息變化。">
+    <meta property="og:description" content="自2019年底至今，新冠肺炎全球累計確診病例數已超過10萬，端傳媒將持續以互動地圖及深度報導，帶你掌握疫情進展。">
     <meta name="twitter:card" content="summary">
     <meta name="twitter:site" content="@initiumnews">
     <meta name="twitter:creator" content="@initiumnews">
     <meta name="twitter:title" content="新冠肺炎全球確診病例分布｜端傳媒">
-    <meta name="twitter:description" content="新型冠狀病毒（2019-nCoV）感染肺炎疫情自2019年底爆發至今擴及全球，確診病例急速增加，端傳媒以互動地圖及來自現場、側面解讀等不同面向的深度報導，帶你掌握疫情的瞬息變化。">
-    <meta name="twitter:image:src" content="https://theinitium.com/project/20200203-international-novel-coronavirus-live/img/social3.png">
+    <meta name="twitter:description" content="自2019年底至今，新冠肺炎全球累計確診病例數已超過10萬，端傳媒將持續以互動地圖及深度報導，帶你掌握疫情進展。">
+    <meta name="twitter:image:src" content="https://theinitium.com/project/20200203-international-novel-coronavirus-live/img/social4.png">
     <meta name="twitter:url" content="https://theinitium.com/project/20200203-international-novel-coronavirus-live">
     <title>新冠肺炎全球確診病例分布｜端傳媒</title>
     <link rel="shortcut icon" href="img/favicon.ico">
@@ -83,18 +83,47 @@
             </div>
           </section>
           <section class="map">
-            <div id="leaflet"></div>
-            <div class="button d-sm-none"><a v-on:click="mapButton">查看完整數據</a></div>
+            <div id="leaflet" v-on:click="closePopup"></div>
+            <div class="button d-md-none anchor"><a v-on:click="mapButton">查看完整數據</a></div>
+            <div class="button d-md-none menu"><a v-on:click="filterDisplay(true)"></a><span class="tips">點選查看大事紀與確診病例歷時變化 </span></div>
             <div class="legend d-none d-md-block">
               <ul>
-                <li>3001 例以上</li>
-                <li>1001 ~ 3000 例</li>
-                <li>501 ~ 1000 例</li>
-                <li>201 ~ 500 例</li>
-                <li>101 ~ 200 例</li>
-                <li>31 ~ 100 例</li>
+                <li>8001 例以上</li>
+                <li>5001 ~ 8000 例</li>
+                <li>3001 ~ 5000 例</li>
+                <li>2001 ~ 3000 例</li>
+                <li>1001 ~ 2000 例</li>
+                <li>301 ~ 1000 例</li>
+                <li>101 ~ 300 例</li>
+                <li>51 ~ 100 例</li>
+                <li>31 ~ 50 例</li>
                 <li>1 ~ 30 例</li>
               </ul>
+            </div>
+            <div class="filter desktop d-none d-md-block">
+              <div class="bar"><span class="tips">拉動時間軸，查看大事紀與確診病例歷時變化</span>
+                <input type="range" step="1" value="16" min="0" max="16" v-on:change="filterDateDesktop">
+                <ul>
+                  <li v-for="(data, key) in filterData" :key="key"><span>{{data.date}}</span>
+                    <p>{{data.text}}</p>
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <div class="filter mobile d-md-none"><a class="close" v-on:click="filterDisplay(false)"></a>
+              <div class="bar">
+                <div class="form-check" v-for="(data, index, key) in filterData" :key="key">
+                  <templete v-if="index === 16">
+                    <input class="form-check-input" type="radio" name="date" :value="index" :id="index" v-on:change="filterDateMobile" checked>
+                  </templete>
+                  <templete v-else>
+                    <input class="form-check-input" type="radio" name="date" :value="index" :id="index" v-on:change="filterDateMobile">
+                  </templete>
+                  <label class="form-check-label" :for="index"><span>{{data.date}}</span>
+                    <p>{{data.text}}</p>
+                  </label>
+                </div>
+              </div>
             </div>
           </section>
         </div>
