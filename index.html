@@ -133,13 +133,8 @@
         </div>
         <section class="statistic">
           <div class="container">
-<<<<<<< HEAD
             <div class="row justify-content-center" :class="switchState?'active':''">
               <div v-for="(datas, key) in groupByType" :key="key" :class="key==='world'?'world col-12 col-md-10':'china col-12 col-md-10 col-lg-6'">
-=======
-            <div class="row">
-              <div class="col-12" v-for="(datas, key) in groupByType" :key="key" :class="key==='world'?'col-lg-7 col-sm-12':'col-lg-5 col-sm-12'">
->>>>>>> cd9995df452aa4017d61f214317c574a5747518b
                 <div class="title serif">
                   <h3>{{ key | groupName }}</h3>
                   <div class="info" v-if="key === 'world'"><span class="confirmed">累計確診 {{datas | sumData('confirmed') + dpConfirmed}} 例 </span>/ <br><span class="death">死亡 {{datas | sumData('death') + dpDeath}} 例 </span>/ <span class="cure">治癒 {{datas | sumData('cure') + dpCure}} 例</span></div>
