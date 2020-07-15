@@ -63,21 +63,21 @@
               <div class="accumulation serif">
                 <div class="death">
                   <h6>累計死亡<br><b>{{dataCSV | sumData('death') + dpDeath}}</b></h6>
-                  <p>較昨日新增<b>{{newDeath}}</b></p>
+                  <p>較前次新增<b>{{newDeath}}</b></p>
                 </div>
                 <div class="confirmed">
                   <h6>累計確診<br><b>{{dataCSV | sumData('confirmed') + dpConfirmed}}</b></h6>
-                  <p>較昨日新增<b>{{newConfirmed}}</b></p>
+                  <p>較前次新增<b>{{newConfirmed}}</b></p>
                 </div>
                 <div class="cure">
                   <h6>累計治癒<br><b>{{dataCSV | sumData('cure') + dpCure}}</b></h6>
-                  <p>較昨日新增<b>{{newCure}}</b></p>
+                  <p>較前次新增<b>{{newCure}}</b></p>
                 </div>
               </div>
               <div class="news">
                 <div class="row justify-content-center">
                   <div class="col-lg-8 col-md-10">
-                    <h4>今日要點<a :href="newsLink" target="_blank">（點擊閱讀疫情深度報道）</a></h4>
+                    <h4>疫情要點<a :href="newsLink" target="_blank">（點擊閱讀疫情深度報道）</a></h4>
                     <ul>
                       <li>{{ newsTitle }}</li>
                     </ul>
