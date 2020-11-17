@@ -62,16 +62,16 @@
               </div>
               <div class="accumulation serif">
                 <div class="death">
-                  <h6>累計死亡<br><b>{{dataCSV | sumData('death') + dpDeath}}</b></h6>
-                  <p>較上次更新增加<b>{{newDeath}}</b></p>
+                  <h6>累計死亡<br><b>{{dataCSV | sumData('death') + dpDeath | formatNumber}}</b></h6>
+                  <p>較昨日新增<b>{{newDeath | formatNumber}}</b></p>
                 </div>
                 <div class="confirmed">
-                  <h6>累計確診<br><b>{{dataCSV | sumData('confirmed') + dpConfirmed}}</b></h6>
-                  <p>較上次更新增加<b>{{newConfirmed}}</b></p>
+                  <h6>累計確診<br><b>{{dataCSV | sumData('confirmed') + dpConfirmed | formatNumber}}</b></h6>
+                  <p>較昨日新增<b>{{newConfirmed | formatNumber}}</b></p>
                 </div>
                 <div class="cure">
-                  <h6>累計治癒<br><b>{{dataCSV | sumData('cure') + dpCure}}</b></h6>
-                  <p>較上次更新增加<b>{{newCure}}</b></p>
+                  <h6>累計治癒<br><b>{{dataCSV | sumData('cure') + dpCure | formatNumber}}</b></h6>
+                  <p>較昨日新增<b>{{newCure | formatNumber}}</b></p>
                 </div>
               </div>
               <div class="news">
@@ -89,43 +89,30 @@
           <section class="map">
             <div id="leaflet" v-on:click="closePopup"></div>
             <div class="button d-md-none anchor"><a v-on:click="mapButton">查看完整數據</a></div>
-            <div class="button d-md-none menu"><a v-on:click="filterDisplay(true)"></a><span class="tips">點選查看大事紀與確診病例歷時變化 </span></div>
+            <div class="button menu"><a v-on:click="filterDisplay(true)"></a><span class="tips">點選查看大事紀與確診病例歷時變化 </span></div>
             <div class="legend d-none d-md-block">
               <ul>
-                <li>8001 例以上</li>
-                <li>5001 ~ 8000 例</li>
-                <li>3001 ~ 5000 例</li>
-                <li>2001 ~ 3000 例</li>
-                <li>1001 ~ 2000 例</li>
-                <li>301 ~ 1000 例</li>
-                <li>101 ~ 300 例</li>
-                <li>51 ~ 100 例</li>
-                <li>31 ~ 50 例</li>
-                <li>1 ~ 30 例</li>
+                <li>10,000,000 例以上</li>
+                <li>5,000,000 ~ 10,000,000 例</li>
+                <li>1,000,000 ~ 5,000,000 例</li>
+                <li>100,000 ~ 1,000,000 例</li>
+                <li>10,000 ~ 100,000 例</li>
+                <li>5,000 ~ 10,000 例</li>
+                <li>1,000 ~ 5,000 例</li>
+                <li>500 ~ 1,000 例</li>
+                <li>100 ~ 500 例</li>
+                <li>1 ~ 100 例</li>
               </ul>
             </div>
-            <div class="filter desktop d-none d-md-block">
-              <div class="bar"><span class="tips">拉動時間軸，查看大事紀與確診病例歷時變化</span>
-                <input type="range" step="1" value="16" min="0" max="16" v-on:change="filterDateDesktop">
-                <ul>
-                  <li v-for="(data, key) in filterData" :key="key"><span>{{data.date}}</span>
-                    <p>{{data.text}}</p>
-                  </li>
-                </ul>
-              </div>
-            </div>
-            <div class="filter mobile d-md-none"><a class="close" v-on:click="filterDisplay(false)"></a>
-              <div class="bar">
-                <div class="form-check" v-for="(data, index, key) in filterData" :key="key">
-                  <templete v-if="data.val === 'latest'">
-                    <input class="form-check-input" type="radio" name="date" :value="index" :id="index" v-on:change="filterDateMobile" checked>
-                  </templete>
-                  <templete v-else>
-                    <input class="form-check-input" type="radio" name="date" :value="index" :id="index" v-on:change="filterDateMobile">
-                  </templete>
-                  <label class="form-check-label" :for="index"><span>{{data.date}}</span>
-                    <p>{{data.text}}</p>
-                  </label>
+            <div class="filter">
+              <div class="filter-wrapper"><a class="close" v-on:click="filterDisplay(false)"></a>
+                <div class="bar">
+                  <div class="form-check" v-for="(data, index, key) in filterData" :key="key">
+                    <input class="form-check-input" type="radio" name="date" :value="index" :id="index" v-on:change="filterDateMobile" :checked="data.date === '最新' ? 'checked' : ''">
+                    <label class="form-check-label" :for="index"><span class="serif">{{data.date}} </span>
+                      <p>{{data.text}}</p>
+                    </label>
+                  </div>
                 </div>
               </div>
             </div>
@@ -133,36 +120,31 @@
         </div>
         <section class="statistic">
           <div class="container">
-            <div class="row justify-content-center" :class="switchState?'active':''">
-              <div v-for="(datas, key) in groupByType" :key="key" :class="key==='world'?'world col-12 col-md-10':'china col-12 col-md-10 col-lg-6'">
+            <div id="tabs">
+              <div class="tab-nav">
+                <ul>
+                  <li><a href="#china">亞洲（中國大陸境內）</a></li>
+                  <li><a href="#Asia">亞洲（中國大陸境外）</a></li>
+                  <li><a href="#America">美洲</a></li>
+                  <li><a href="#Europe">歐洲</a></li>
+                  <li><a href="#Africa">非洲</a></li>
+                  <li><a href="#Oceania">大洋洲</a></li>
+                </ul>
+              </div>
+              <div class="tab-panel" v-for="(datas, key) in groupByType" :key="key" :id="key">
                 <div class="title serif">
-                  <h3>{{ key | groupName }}</h3>
-                  <div class="info" v-if="key === 'world'"><span class="confirmed">累計確診 {{datas | sumData('confirmed') + dpConfirmed}} 例 </span>/ <br><span class="death">死亡 {{datas | sumData('death') + dpDeath}} 例 </span>/ <span class="cure">治癒 {{datas | sumData('cure') + dpCure}} 例</span></div>
-                  <div class="info" v-else><span class="confirmed">累計確診 {{datas | sumData('confirmed')}} 例 </span>/ <br><span class="death">死亡 {{datas | sumData('death')}} 例 </span>/ <span class="cure">治癒 {{datas | sumData('cure')}} 例</span></div>
+                  <h3>{{key | groupName}}</h3>
+                  <div class="info"><span class="confirmed">累計確診 {{datas | sumData('confirmed') | formatNumber}} 例 </span>/ <br><span class="death">死亡 {{datas | sumData('death') | formatNumber}} 例 </span>/ <span class="cure">治癒 {{datas | sumData('cure') | formatNumber}} 例</span></div>
                 </div>
                 <div class="content">
-                  <div class="row" v-if="key === 'world'">
-                    <div class="col-lg-6 col-md-12" v-for="(data, key) in datas" :key="key"><span class="local">{{data.name_zh}}</span><span class="confirmed">{{data.confirmed}}</span><span class="death">{{data.death}}</span><span class="cure">{{data.cure}}</span></div>
-                    <div class="col-lg-6 col-md-12"><span class="local">鑽石公主號</span><span class="confirmed">{{dpConfirmed}}</span><span class="death">{{dpDeath}}</span><span class="cure">{{dpCure}}</span></div>
-                  </div>
-                  <div class="row" v-else>
-                    <div class="col-lg-12" v-for="(data, key) in datas" :key="key"><span class="local">{{data.name_zh}}</span><span class="confirmed">{{data.confirmed}}</span><span class="death">{{data.death}}</span><span class="cure">{{data.cure}}</span></div>
+                  <div class="row">
+                    <div v-for="(data, key, index) in datas" :key="key" :class="['col-12', 'col-md-6', data.name_zh]"><span class="local">{{data.name_zh}}</span><span class="confirmed">{{data.confirmed | formatNumber}}</span><span class="death">{{data.death | formatNumber}}</span><span class="cure">{{data.cure | formatNumber}}</span></div>
                   </div>
                 </div>
               </div>
             </div>
             <div class="source">
               <p>資源來源：美國約翰霍普金斯大學（Johns Hopkins CSSE）資訊、綜合傳媒報導</p>
-            </div>
-          </div>
-          <div class="switch">
-            <div class="container">
-              <div class="buttons">
-                <button class="btn" @click="switchStatistic"><span class="icon">
-                    <svg height="16px" style="enable-background:new 0 0 16 16;" version="1.1" viewBox="0 0 16 16" width="16px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" fill="var(--icon-color, #000)">
-                      <path d="M14,8c-0.609,0-0.898,0.43-1,0.883C12.635,10.516,11.084,13,8,13c-0.757,0-1.473-0.172-2.114-0.474L6.414,12  C6.773,11.656,7,11.445,7,11c0-0.523-0.438-1-1-1H3c-0.609,0-1,0.492-1,1v3c0,0.541,0.428,1,1,1c0.484,0,0.688-0.273,1-0.594  l0.408-0.407C5.458,14.632,6.685,15,8,15c4.99,0,7-4.75,7-5.938C15,8.336,14.469,8,14,8z M3,7.117C3.365,5.485,4.916,3,8,3  c0.757,0,1.473,0.171,2.114,0.473L9.586,4C9.227,4.344,9,4.555,9,5c0,0.523,0.438,1,1,1h3c0.609,0,1-0.492,1-1V2  c0-0.541-0.428-1-1-1c-0.484,0-0.688,0.273-1,0.594l-0.408,0.407C10.542,1.368,9.315,1,8,1C3.01,1,1,5.75,1,6.938  C1,7.664,1.531,8,2,8C2.609,8,2.898,7.57,3,7.117z"></path>
-                    </svg></span><span class="text">切換<b v-if="switchState">中國大陸境外</b><b v-else>中國大陸境內</b>數據</span></button>
-              </div>
             </div>
           </div>
         </section>
