@@ -63,15 +63,15 @@
               <div class="accumulation serif">
                 <div class="death">
                   <h6>累計死亡<br><b>{{dataCSV | sumData('death') + dpDeath | formatNumber}}</b></h6>
-                  <p>較昨日新增<b>{{newDeath | formatNumber}}</b></p>
+                  <p>較上次更新新增<b>{{newDeath | formatNumber}}</b></p>
                 </div>
                 <div class="confirmed">
                   <h6>累計確診<br><b>{{dataCSV | sumData('confirmed') + dpConfirmed | formatNumber}}</b></h6>
-                  <p>較昨日新增<b>{{newConfirmed | formatNumber}}</b></p>
+                  <p>較上次更新新增<b>{{newConfirmed | formatNumber}}</b></p>
                 </div>
                 <div class="cure">
                   <h6>累計治癒<br><b>{{dataCSV | sumData('cure') + dpCure | formatNumber}}</b></h6>
-                  <p>較昨日新增<b>{{newCure | formatNumber}}</b></p>
+                  <p>較上次更新新增<b>{{newCure | formatNumber}}</b></p>
                 </div>
               </div>
               <div class="news">
