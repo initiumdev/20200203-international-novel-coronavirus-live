@@ -55,31 +55,31 @@
             <div class="container">
               <div class="title">
                 <div class="info">
-                  <div class="date">截至 {{ updateTime }}</div>
+                  <div class="date">截至 {{ news.update_time }}</div>
                   <div class="share"><a class="facebook" href="https://www.facebook.com/sharer.php?u=https%3A%2F%2Ftheinitium.com%2Fproject%2F20200203-international-novel-coronavirus-live" target="_blank"><span></span></a><a class="twitter" href="https://twitter.com/intent/tweet?url=https%3A%2F%2Ftheinitium.com%2Fproject%2F20200203-international-novel-coronavirus-live" target="_blank"><span></span></a></div>
                 </div>
                 <h1 class="serif">2019冠狀病毒疫情<br>全球確診病例分佈圖</h1>
               </div>
               <div class="accumulation serif">
                 <div class="death">
-                  <h6>累計死亡<br><b>{{dataCSV | sumData('death') + dpDeath | formatNumber}}</b></h6>
-                  <p>較上次更新新增<b>{{newDeath | formatNumber}}</b></p>
+                  <h6>累計死亡<br><b>{{dataCSV | sumData('death') + news.diamond_princess_death | formatNumber}}</b></h6>
+                  <p>較上次更新新增<b>{{news.new_death | formatNumber}}</b></p>
                 </div>
                 <div class="confirmed">
-                  <h6>累計確診<br><b>{{dataCSV | sumData('confirmed') + dpConfirmed | formatNumber}}</b></h6>
-                  <p>較上次更新新增<b>{{newConfirmed | formatNumber}}</b></p>
+                  <h6>累計確診<br><b>{{dataCSV | sumData('confirmed') + news.diamond_princess_confirmed | formatNumber}}</b></h6>
+                  <p>較上次更新新增<b>{{news.new_confirmed | formatNumber}}</b></p>
                 </div>
                 <div class="cure">
-                  <h6>累計治癒<br><b>{{dataCSV | sumData('cure') + dpCure | formatNumber}}</b></h6>
-                  <p>較上次更新新增<b>{{newCure | formatNumber}}</b></p>
+                  <h6>累計治癒<br><b>{{dataCSV | sumData('cure') + news.diamond_princess_cure | formatNumber}}</b></h6>
+                  <p>較上次更新新增<b>{{news.new_cure | formatNumber}}</b></p>
                 </div>
               </div>
               <div class="news">
                 <div class="row justify-content-center">
                   <div class="col-lg-8 col-md-10">
-                    <h4>疫情要點<a :href="newsLink" target="_blank">（點擊閱讀疫情深度報道）</a></h4>
+                    <h4>疫情要點<a :href="news.link" target="_blank">（點擊閱讀疫情深度報道）</a></h4>
                     <ul>
-                      <li>{{ newsTitle }}</li>
+                      <li>{{ news.title }}</li>
                     </ul>
                   </div>
                 </div>
@@ -138,7 +138,7 @@
                 </div>
                 <div class="content">
                   <div class="row">
-                    <div v-for="(data, key, index) in datas" :key="key" :class="['col-12', 'col-md-6', data.name_zh]"><span class="local">{{data.name_zh}}</span><span class="confirmed">{{data.confirmed | formatNumber}}</span><span class="death">{{data.death | formatNumber}}</span><span class="cure">{{data.cure | formatNumber}}</span></div>
+                    <div v-for="(data, key, index) in datas" :key="key" :class="['col-12', 'col-md-6', data.name_zh]"><span class="local">{{data.name_zh}}</span><span class="confirmed">{{data.confirmed_latest | formatNumber}}</span><span class="death">{{data.death_latest | formatNumber}}</span><span class="cure">{{data.cure_latest | formatNumber}}</span></div>
                   </div>
                 </div>
               </div>
